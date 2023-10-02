@@ -1,4 +1,17 @@
-#container {
+.square-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Esto asegura que el cuadrado se ajuste al alto de la pantalla */
+  }
+  
+  .colored-element {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    transition: background-color 0.3s ease-in-out;
+  }
+  #container {
     text-align: center;
   
     position: absolute;

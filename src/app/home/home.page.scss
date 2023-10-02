@@ -28,3 +28,26 @@
 .center-text {
   text-align: center;
 }
+.container {
+  background-color: gray;
+}
+
+.box {
+  background-color: gray;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  margin: 20px;
+}
+
+
+
+h2 {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+p {
+  font-size: 18px;
+}

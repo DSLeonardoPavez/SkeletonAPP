@@ -8,22 +8,20 @@
   </ion-header>
   <ion-content class="container">
     <div class="box">
-      <h1 >Iniciar Sesion</h1>
+      <h1 >Recordar Usuario</h1>
       <ion-item>
-        <ion-label expand="full" position="stacked">Usuario</ion-label>
-        <ion-input placeholder="Ingrese Usuario"></ion-input>
+        <ion-label id="User" position="floating">Usuario</ion-label>
+        <ion-input type="text"  ></ion-input>
       </ion-item>
-      <ion-item>
-        <ion-label expand="full" position="stacked">Contraseña</ion-label>
-        <ion-input placeholder="Ingrese Contraseña"></ion-input>
-      </ion-item>
-      <ion-button expand="full"  routerLink="/main" >Ingresar</ion-button>
+   
+      <ion-button id="present-alert" routerLink="/home" >Ingresar</ion-button>
+      <ion-alert trigger="present-alert" header="recibirás la verificación en tu correo "  ></ion-alert>
+      
+      
+      
       <ion-text color="tertiary">
         <p routerLink="/sign-in">crear cuenta</p>
       </ion-text>
     </div>
  
   </ion-content>
-
-
-
