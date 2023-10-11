@@ -9,18 +9,17 @@
   <ion-content class="container">
     <div class="box">
       <h1 >Iniciar Sesion</h1>
-      <ion-item>
-        <ion-label expand="full" position="stacked">Usuario</ion-label>
-        <ion-input placeholder="Ingrese Usuario"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label expand="full" position="stacked">Contraseña</ion-label>
-        <ion-input placeholder="Ingrese Contraseña"></ion-input>
-      </ion-item>
-      <ion-button expand="full"  routerLink="/main" >Ingresar</ion-button>
-      <ion-text color="tertiary">
-        <p routerLink="/sign-in">crear cuenta</p>
-      </ion-text>
+      
+        <ion-item>
+          <ion-label position="stacked">Usuario (3-8 caracteres)</ion-label>
+          <ion-input [(ngModel)]="username" maxlength="8" minlength="3"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Contraseña (4 dígitos)</ion-label>
+          <ion-input [(ngModel)]="password" type="password" maxlength="4"></ion-input>
+        </ion-item>
+        <ion-button expand="full" (click)="login()">Ingresar</ion-button>
+     
     </div>
  
   </ion-content>

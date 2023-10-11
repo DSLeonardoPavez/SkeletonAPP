@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { createAnimation, Animation } from '@ionic/core';
+import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-main',
@@ -8,13 +9,39 @@ import { createAnimation, Animation } from '@ionic/core';
 })
 
 export class MainPage {
-  colors = ['red', 'green', 'blue', 'yellow', 'orange']; 
-  currentColorIndex = 0;
-  currentColor = this.colors[this.currentColorIndex];
+  
+  username: string = '';
+  nombre: string = '';
+  apellido: string = '';
+  educacion: string = '';
+  fechaNacimiento: string = '';
 
-  changeSquareColor(){
-    this.currentColorIndex = (this.currentColorIndex + 1) % this.colors.length;
-    this.currentColor = this.colors[this.currentColorIndex];
+  constructor(private route: ActivatedRoute, private toastController: ToastController) {
+    this.route.queryParams.subscribe((params) => {
+      if (params['username']) {
+        this.username = params['username'];
+      }
+    });
   }
 
+  limpiar() {
+    this.nombre = '';
+    this.apellido = '';
+    this.educacion = '';
+    this.fechaNacimiento = '';
+  }
+  
+  mostrarInformacion() {
+    const message = `Nombre: ${this.nombre}\nApellido: ${this.apellido}\nFecha Nacimiento: ${this.fechaNacimiento}`;
+    this.presentToast(message);
+  }
+
+  async presentToast(message: string) {
+    const toast = await this.toastController.create({
+      message: message,
+      duration: 2000,
+    });
+    toast.present();
+
+  }
 }

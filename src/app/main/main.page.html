@@ -1,25 +1,29 @@
 <ion-header [translucent]="true">
-
+  <ion-img routerLink="/home" src="assets\icon\1280px-Logo_DuocUC.svg.png"></ion-img> 
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">main</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  
-  <ion-content>
-    <div class="square-container">
-      <div class="colored-element" [style.background-color]="currentColor"></div>
-    </div>
-  </ion-content>
-</ion-content>
+
 <ion-content class="container">
   <div class="box">
-   <h1>Lograste Ingresar</h1>
-   <h2>Bienvenido Disfruta del cubo</h2>
-    <ion-button (click)="changeSquareColor()">Fiesta!</ion-button>
+    <h1>{{ username }}</h1>
+    <ion-item>
+      <ion-label position="stacked">Nombre</ion-label>
+      <ion-input [(ngModel)]="nombre"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Apellido</ion-label>
+      <ion-input [(ngModel)]="apellido"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Nivel de Educación</ion-label>
+      <ion-input [(ngModel)]="educacion"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Fecha de Nacimiento</ion-label>
+      <ion-input [(ngModel)]="fechaNacimiento" type="date"></ion-input>
+    </ion-item>
+    <ion-button expand="full" (click)="limpiar()">Limpiar</ion-button>
+    <ion-button expand="full" (click)="mostrarInformacion()">Mostrar</ion-button>
   </div>
 
 </ion-content>
